@@ -29,7 +29,11 @@ module Paysimple
       Paysimple.request(:get, "#{url}/#{id}/paymentschedules", opts)
     end
 
-  protected
+    def self.ach_accounts(id)
+      Paysimple.request(:get, "#{url}/#{id}/achaccounts")
+    end
+
+    protected
 
     def self.url
       '/customer'
